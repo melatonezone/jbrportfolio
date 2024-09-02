@@ -9,23 +9,6 @@ body {
     user-select: none; /* Standard */
 }
 
-.navbar {
-    overflow: hidden;
-    background-color: whitesmoke;
-}
-    a {
-        float: left;
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 30px 16px 25px 16px;
-        text-decoration: none;
-        font-size: 12pt;
-        color: black;
-    }
-    a:hover {
-        background-color:#ddd;
-    }
 
 .logo {
     float: left;
@@ -35,29 +18,88 @@ body {
     padding: 12px 20px;
     text-decoration: none;
     font-size: 17px;
+    background-color: whitesmoke;
 }
-    img {
-        width: auto;
-        height: 45px;
-        /*image rendering hax via nullsleep on tumblr*/
-        image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-        image-rendering: -moz-crisp-edges;          /* Firefox                        */
-        image-rendering: -o-crisp-edges;            /* Opera                          */
-        image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-        image-rendering: pixelated;                 /* Universal support since 2021   */
-        image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-        -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+.logo:hover {
+    background-color:#bbb;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+
+.navbar a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 30px 16px 25px 16px;
+        text-decoration: none;
+        font-size: 12pt;
+        color: black;
+}
+.navbar a:hover {
+        background-color:#ddd;
+}
+
+img {
+    width: auto;
+    height: 45px;
+    /*image rendering hax via nullsleep on tumblr*/
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Universal support since 2021   */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 20%;
+    max-width: 20%;
+    padding: 15px 15px;
+    text-align:center;
+}
+
+    .column img {
+        margin-top: 20px;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
     }
 
+/* two columns*/
+@media screen and (max-width: 980px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
 
-@media (max-width: 1000px) {
     .navbar {
-        background: yellow;
+        background: yellow; /* ugly fucking yellow for testing purposes right now*/
     }
-        a {
-            font-size: 20pt
-        }
-    .logo {
-        padding: 19px 25px;
+}
+
+
+/* single column */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
     }
 }
